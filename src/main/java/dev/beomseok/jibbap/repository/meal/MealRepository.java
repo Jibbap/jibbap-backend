@@ -1,4 +1,4 @@
-package dev.beomseok.jibbap.repository;
+package dev.beomseok.jibbap.repository.meal;
 
 import dev.beomseok.jibbap.entity.MealEntity;
 import dev.beomseok.jibbap.entity.RelationshipEntity;

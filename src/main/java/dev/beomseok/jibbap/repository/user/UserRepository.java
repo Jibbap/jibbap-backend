@@ -1,4 +1,4 @@
-package dev.beomseok.jibbap.repository;
+package dev.beomseok.jibbap.repository.user;
 
 import dev.beomseok.jibbap.dto.GroupDetail;
 import dev.beomseok.jibbap.entity.UserEntity;

@@ -1,4 +1,4 @@
-package dev.beomseok.jibbap.repository;
+package dev.beomseok.jibbap.repository.relationship;
 
 import dev.beomseok.jibbap.entity.RelationshipEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

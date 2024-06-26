@@ -1,43 +1,32 @@
 package dev.beomseok.jibbap.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.beomseok.jibbap.config.H2Test;
 import dev.beomseok.jibbap.dto.GroupInfo;
 import dev.beomseok.jibbap.dto.GroupRequest;
 import dev.beomseok.jibbap.dto.MealInfoInGroup;
-import dev.beomseok.jibbap.entity.GroupEntity;
-import dev.beomseok.jibbap.entity.MealEntity;
 import dev.beomseok.jibbap.entity.RelationshipEntity;
 import dev.beomseok.jibbap.entity.UserEntity;
-import dev.beomseok.jibbap.repository.GroupRepository;
-import dev.beomseok.jibbap.repository.MealRepository;
-import dev.beomseok.jibbap.repository.RelationshipRepository;
-import dev.beomseok.jibbap.repository.UserRepository;
+import dev.beomseok.jibbap.repository.group.GroupRepository;
+import dev.beomseok.jibbap.repository.meal.MealRepository;
+import dev.beomseok.jibbap.repository.relationship.RelationshipRepository;
+import dev.beomseok.jibbap.repository.user.UserRepository;
 import dev.beomseok.jibbap.util.DataSet;
 import jakarta.transaction.Transactional;
-import jdk.jfr.ContentType;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
-import org.springframework.test.context.event.annotation.BeforeTestClass;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import java.time.LocalDate;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 

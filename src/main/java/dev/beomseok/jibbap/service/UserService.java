@@ -3,12 +3,9 @@ package dev.beomseok.jibbap.service;
 import dev.beomseok.jibbap.dto.GroupDetail;
 import dev.beomseok.jibbap.dto.GroupsIncludingUser;
 import dev.beomseok.jibbap.dto.UserRequest;
-import dev.beomseok.jibbap.entity.GroupEntity;
-import dev.beomseok.jibbap.entity.RelationshipEntity;
 import dev.beomseok.jibbap.entity.UserEntity;
-import dev.beomseok.jibbap.repository.GroupRepository;
-import dev.beomseok.jibbap.repository.UserRepository;
-import jakarta.persistence.EntityNotFoundException;
+import dev.beomseok.jibbap.repository.group.GroupRepository;
+import dev.beomseok.jibbap.repository.user.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -48,9 +45,9 @@ public class UserService {
                 .stream()
                 .map(group -> {
                     GroupsIncludingUser eachGroup = new GroupsIncludingUser();
-                    eachGroup.setGroupName(group.getGroup_name());
+                    eachGroup.setGroupName(group.getGroupName());
                     eachGroup.setUuid(group.getUuid());
-                    eachGroup.setUsernameInGroup(group.getUsername_in_group());
+                    eachGroup.setUsernameInGroup(group.getUsernameInGroup());
                     return eachGroup;
                 })
                 .collect(Collectors.toList());

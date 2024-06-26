@@ -1,8 +1,7 @@
-package dev.beomseok.jibbap.repository;
+package dev.beomseok.jibbap.repository.group;
 
 import dev.beomseok.jibbap.dto.GroupDetail;
 import dev.beomseok.jibbap.entity.GroupEntity;
-import dev.beomseok.jibbap.entity.RelationshipEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

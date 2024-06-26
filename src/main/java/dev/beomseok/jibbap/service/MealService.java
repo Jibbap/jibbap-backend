@@ -3,14 +3,11 @@ package dev.beomseok.jibbap.service;
 import dev.beomseok.jibbap.dto.MealRequest;
 import dev.beomseok.jibbap.entity.MealEntity;
 import dev.beomseok.jibbap.entity.RelationshipEntity;
-import dev.beomseok.jibbap.repository.MealRepository;
-import dev.beomseok.jibbap.repository.RelationshipRepository;
-import dev.beomseok.jibbap.repository.UserRepository;
-import jakarta.transaction.Transactional;
+import dev.beomseok.jibbap.repository.meal.MealRepository;
+import dev.beomseok.jibbap.repository.relationship.RelationshipRepository;
+import dev.beomseok.jibbap.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor

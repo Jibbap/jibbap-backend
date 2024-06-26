@@ -4,13 +4,11 @@ import dev.beomseok.jibbap.entity.GroupEntity;
 import dev.beomseok.jibbap.entity.MealEntity;
 import dev.beomseok.jibbap.entity.RelationshipEntity;
 import dev.beomseok.jibbap.entity.UserEntity;
-import dev.beomseok.jibbap.repository.GroupRepository;
-import dev.beomseok.jibbap.repository.MealRepository;
-import dev.beomseok.jibbap.repository.RelationshipRepository;
-import dev.beomseok.jibbap.repository.UserRepository;
-import jakarta.transaction.Transactional;
+import dev.beomseok.jibbap.repository.group.GroupRepository;
+import dev.beomseok.jibbap.repository.meal.MealRepository;
+import dev.beomseok.jibbap.repository.relationship.RelationshipRepository;
+import dev.beomseok.jibbap.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.assertj.core.util.Lists;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
