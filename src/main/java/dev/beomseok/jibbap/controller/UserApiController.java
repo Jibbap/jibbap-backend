@@ -1,17 +1,14 @@
 package dev.beomseok.jibbap.controller;
 
-import dev.beomseok.jibbap.dto.UserRequest;
 import dev.beomseok.jibbap.dto.GroupsIncludingUser;
-import dev.beomseok.jibbap.service.GroupService;
+import dev.beomseok.jibbap.dto.UserRequest;
 import dev.beomseok.jibbap.service.UserService;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/users")
