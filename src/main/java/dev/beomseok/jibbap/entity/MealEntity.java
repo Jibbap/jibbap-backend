@@ -23,4 +23,11 @@ public class MealEntity {
     @ManyToOne
     @JoinColumn(name = "relationship_id")
     private RelationshipEntity relationshipEntity;
+
+
+    // == 연관 관계 관련 메서드 == //
+    public void setRelationshipEntity(RelationshipEntity relationshipEntity) {
+        this.relationshipEntity = relationshipEntity;
+        this.relationshipEntity.getMealEntities().add(this);
+    }
 }

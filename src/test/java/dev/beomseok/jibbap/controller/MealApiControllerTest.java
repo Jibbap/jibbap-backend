@@ -71,7 +71,7 @@ class MealApiControllerTest extends H2Test {
         String json = objectMapper.writeValueAsString(mealRequest);
 
         mockMvc.perform(
-                MockMvcRequestBuilders.put(getUrl("/groups/{uuid}/users/{kakaoId}"),UUID,KAKAO_ID)
+                MockMvcRequestBuilders.post(getUrl("/groups/{uuid}/users/{kakaoId}"),UUID,KAKAO_ID)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(json)
         ).andExpect(
