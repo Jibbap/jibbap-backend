@@ -21,14 +21,12 @@ public class RelationshipEntity {
     @Column(length = 20,name = "username_in_group")
     private String usernameInGroup;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    @ToString.Exclude
     private UserEntity userEntity;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "group_id")
-    @ToString.Exclude
     private GroupEntity groupEntity;
 
     @OneToMany(mappedBy = "relationshipEntity")

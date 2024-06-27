@@ -20,7 +20,7 @@ public class MealEntity {
     @Column(name = "is_jibbap",length = 3)
     private String isJibbap;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "relationship_id")
     private RelationshipEntity relationshipEntity;
 

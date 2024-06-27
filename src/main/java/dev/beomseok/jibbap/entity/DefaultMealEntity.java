@@ -26,7 +26,7 @@ public class DefaultMealEntity {
     @Column(name = "is_jibbap")
     private Boolean isJibbap;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "relationship_id")
     private RelationshipEntity relationshipEntity;
 }
