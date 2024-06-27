@@ -9,9 +9,9 @@ import dev.beomseok.jibbap.repository.group.GroupRepository;
 import dev.beomseok.jibbap.repository.meal.MealRepository;
 import dev.beomseok.jibbap.repository.relationship.RelationshipRepository;
 import dev.beomseok.jibbap.repository.user.UserRepository;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class GroupService {
     private final GroupRepository groupRepository;
     private final UserRepository userRepository;
@@ -47,7 +48,7 @@ public class GroupService {
 
 
 
-    @Transactional
+    @Transactional(readOnly = true)
     public MealInfoInGroup readMealInfosInGroup(String uuid){ // test 아직 안 만듬
         GroupEntity group = groupRepository.findByUuid(uuid);
         if(group==null){
@@ -76,7 +77,7 @@ public class GroupService {
         return mealInfoInGroup;
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public GroupInfo readGroupInfo(String uuid){
         GroupEntity group = groupRepository.findByUuid(uuid);
         if(group==null){
@@ -107,7 +108,6 @@ public class GroupService {
         groupRepository.save(group);
     }
 
-    @Transactional
     public boolean updateUsernameInGroup(String uuid, String kakaoId, String usernameInGroup){
         GroupEntity group = groupRepository.findByUuid(uuid);
         if(group==null){
